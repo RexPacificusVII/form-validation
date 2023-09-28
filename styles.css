@@ -9,14 +9,23 @@
     /* border: 1px solid red; */
 }
 
+body {
+    background-color:aliceblue
+}
+
 #formContainer {
     background-image: url(./assets/join-us.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.form-check-input {
+.form-check-input:checked {
+    background-color: #d69960;
+    border: none;
+}
 
+.form-check-input:focus {
+    box-shadow: 0px 0px 2px 2px #eaba8a;
 }
 
 .btn {
@@ -25,12 +34,18 @@
     color: inherit;
 }
 
+.btn:focus {
+    background-color: #db9e65;
+}
+
 .btn:hover {
     background-color: #d69960;
-    border: 1px solid transparent;
 }
 
 .btn:active {
     background-color: #db9e65;
-    border: 1px solid transparent;
+}
+
+.validation-message small {
+    color: #b45052;
 }
