@@ -41,40 +41,49 @@ function register(e) {
 }
 
 
-firstName.addEventListener('input', firstName_Verify)
+firstName.addEventListener('input', firstName_Verify);
+const name_reg = /^(?!.*[#?\-\\])[a-zA-Z]+$/;
 function firstName_Verify() {
     if (!firstName.value) {
         document.getElementById('firstNameMessage').innerHTML = '<small class="mb-3">Please enter your first name.</small>';
         firstNameMessage.classList.remove('invisible');
         return true;
+    } else if (!name_reg.test(firstName.value)) {
+        document.getElementById('firstNameMessage').innerHTML = '<small class="mb-3">Invalid name format.</small>';
     } else {
         firstNameMessage.classList.add('invisible');
     }
 }
 
-lastName.addEventListener('input', lastName_Verify)
+lastName.addEventListener('input', lastName_Verify);
 function lastName_Verify() {
     if (!lastName.value) {
         document.getElementById('lastNameMessage').innerHTML = '<small class="mb-3">Please enter your last name.</small>';
         lastNameMessage.classList.remove('invisible');
         return true;
+    } else if (!name_reg.test(lastName.value)) {
+        document.getElementById('lastNameMessage').innerHTML = '<small class="mb-3">Invalid name format.</small>';
     } else {
         lastNameMessage.classList.add('invisible');
     }
 }
 
-email.addEventListener('input', email_Verify)
+email.addEventListener('input', email_Verify);
+const email_reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 function email_Verify() {
     if (!email.value) {
         document.getElementById('emailMessage').innerHTML = '<small class="mb-3">Please enter a valid email address.</small>';
         emailMessage.classList.remove('invisible');
         return true;
+    } else if (!email_reg.test(email.value)) {
+        document.getElementById('emailMessage').innerHTML = '<small class="mb-3">Invalid email address format.</small>';
     } else {
         emailMessage.classList.add('invisible');
     }
 }
 
-birthDate.addEventListener('input', birthDate_Verify)
+
+birthDate.addEventListener('input', birthDate_Verify);
 function birthDate_Verify() {
     if (!birthDate.value) {
         document.getElementById('birthDateMessage').innerHTML = '<small class="mb-3">Enter your date of birth.</small>';
@@ -98,7 +107,7 @@ function password_Verify() {
     }
 }
 
-passwordConfirm.addEventListener('input', passwordConfirm_Verify)
+passwordConfirm.addEventListener('input', passwordConfirm_Verify);
 function passwordConfirm_Verify() {
     if (!passwordConfirm.value) {
         document.getElementById('passwordConfirmMessage').innerHTML = '<small class="mb-3">Please confirm your password.</small>';
@@ -111,7 +120,7 @@ function passwordConfirm_Verify() {
     }
 }
 
-terms.addEventListener('input', terms_Verify)
+terms.addEventListener('input', terms_Verify);
 function terms_Verify() {
     if (!terms.checked) {
         document.getElementById('termsMessage').innerHTML = '<small class="mb-3">You must agree before submitting.</small>';
