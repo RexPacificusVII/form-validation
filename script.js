@@ -90,7 +90,16 @@ function birthDate_Verify() {
         birthDateMessage.classList.remove('invisible');
         return true;
     } else {
-        birthDateMessage.classList.add('invisible');
+        const birthDateVar = new Date(birthDate.value);
+        const todayVar = new Date();
+        const age = todayVar.getFullYear() - birthDateVar.getFullYear();
+
+        if (age < 18) {
+            document.getElementById('birthDateMessage').innerHTML = '<small class="mb-3">Must be at least 18 y/o.</small>';
+            birthDateMessage.classList.remove('invisible');
+        } else {
+            birthDateMessage.classList.add('invisible');
+        }
     }
 }
 
