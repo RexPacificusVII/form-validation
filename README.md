@@ -1,4 +1,4 @@
-This repository contains a mock registration form activity created using HTML, CSS, and JavaScript. The form uses custom error messages to indicate invalid or incomplete input, instead of relying on the browser defaults. The form does not currently collect any data, as there is no database.
+This repository contains a mock registration form created using HTML, CSS, and JavaScript. The form uses custom error messages to indicate invalid or incomplete input, instead of relying on the browser defaults. The form does not currently collect any data, as there is no database.
 
 ## Key features:
 
